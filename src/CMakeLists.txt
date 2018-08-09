@@ -1,5 +1,6 @@
 add_executable(doxygen_demo
     main.cpp
+    module.h
 )
 set_property(TARGET doxygen_demo
     PROPERTY CXX_STANDARD 11
@@ -13,3 +14,9 @@ find_package(Doxygen
 
 message(STATUS "DOXYGEN_FOUND:      ${DOXYGEN_FOUND}")
 message(STATUS "DOXYGEN_VERSION:    ${DOXYGEN_VERSION}")
+message(STATUS "DOXYGEN_EXECUTABLE: ${DOXYGEN_EXECUTABLE}")
+
+# In a more recent version of CMake :(
+# doxygen_add_docs(doxygen_demo
+    # module.h
+# )
