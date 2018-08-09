@@ -37,7 +37,6 @@ void module_function_2(int the_param);
  *
  * This function takes an input and an output argument but does nothing.
  * It simply provides Doxygen with something to document.
- * Format: @<param>[direction]    <name>  <Description>
  *
  * @param[in]   input   This is the input parameter.
  * @param[out]  output  This is the output parameter.

@@ -21,3 +21,17 @@ message(STATUS "DOXYGEN_HAVE_DOT:   ${DOXYGEN_HAVE_DOT}")       # Does this vari
 # doxygen_add_docs(doxygen_demo
     # module.h
 # )
+
+# Create a manual target in my older version of CMake
+if (DOXYGEN_FOUND)
+    # Copy the Doxygen config file to the out-of-tree build directory
+    # This enables CMake to perform variable substitutions!
+    configure_file(Doxyfile Doxyfile @ONLY)
+
+    add_custom_target(doc_doxygen_demo
+        COMMAND ${DOXYGEN_EXECUTABLE} Doxyfile
+        COMMENT "Generating Doxygen documentation"
+        VERBATIM
+    )
+    # TODO Add clean target
+endif (DOXYGEN_FOUND)
