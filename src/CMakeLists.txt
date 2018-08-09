@@ -33,5 +33,7 @@ if (DOXYGEN_FOUND)
         COMMENT "Generating Doxygen documentation"
         VERBATIM
     )
-    # TODO Add clean target
+    set_directory_properties(PROPERTY
+        ADDITIONAL_MAKE_CLEAN_FILES "${CMAKE_BINARY_DIR}/doc"
+    )
 endif (DOXYGEN_FOUND)
